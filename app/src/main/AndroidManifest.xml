@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Post"></activity>
+        <activity android:name=".Tech"></activity>
+        <activity android:name=".World" />
+        <activity android:name=".Latest" />
+        <activity android:name=".Post" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

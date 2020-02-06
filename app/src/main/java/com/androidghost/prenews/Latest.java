@@ -2,7 +2,6 @@ package com.androidghost.prenews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,8 +24,8 @@ import java.util.List;
 import java.util.Map;
 
 
-public class MainActivity extends AppCompatActivity {
-    String url = "https://beebom.com/wp-json/wp/v2/posts?filter[posts_per_page]=10&fields=id,title";
+public class Latest extends AppCompatActivity {
+    String url = "https://beebom.com/wp-json/wp/v2/posts?categories=151";
     List<Object> list;
     Gson gson;
     ProgressDialog progressDialog;
@@ -39,16 +38,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_latest);
         Button latest,world,tech;
         latest =(Button)findViewById(R.id.latest);
         world =(Button)findViewById(R.id.world);
         tech =(Button)findViewById(R.id.tech);
+        Button home =(Button)findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent act = new Intent(Latest.this,MainActivity.class);
 
+                startActivity(act);
+            }
+        });
         latest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent act = new Intent(MainActivity.this,Latest.class);
+                Intent act = new Intent(Latest.this,Latest.class);
 
                 startActivity(act);
             }
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         tech.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent act = new Intent(MainActivity.this,Tech.class);
+                Intent act = new Intent(Latest.this,Tech.class);
 
                 startActivity(act);
             }
@@ -64,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         world.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent act = new Intent(MainActivity.this,World.class);
+                Intent act = new Intent(Latest.this,World.class);
 
                 startActivity(act);
             }
@@ -72,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         postList = (ListView)findViewById(R.id.postList);
-        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog = new ProgressDialog(Latest.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
@@ -90,17 +97,17 @@ public class MainActivity extends AppCompatActivity {
                     postTitle[i] = (String) mapTitle.get("rendered");
                 }
 
-                postList.setAdapter(new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,postTitle));
+                postList.setAdapter(new ArrayAdapter(Latest.this,android.R.layout.simple_list_item_1,postTitle));
                 progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(MainActivity.this, "Some error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(Latest.this, "Some error occurred", Toast.LENGTH_LONG).show();
             }
         });
 
-        RequestQueue rQueue = Volley.newRequestQueue(MainActivity.this);
+        RequestQueue rQueue = Volley.newRequestQueue(Latest.this);
         rQueue.add(request);
 
         postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
