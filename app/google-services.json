@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "757399920177",
+    "firebase_url": "https://prenews-123.firebaseio.com",
+    "project_id": "prenews-123",
+    "storage_bucket": "prenews-123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757399920177:android:e98118416de737eae0ff10",
+        "android_client_info": {
+          "package_name": "com.androidghost.prenews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757399920177-d4a9c97sivhapaimdkjb3og8nq4ctn32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtku8kS8Dr-vrn48AS0FWfoRtt6ZP2e_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757399920177-d4a9c97sivhapaimdkjb3og8nq4ctn32.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
