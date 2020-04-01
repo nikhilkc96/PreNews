@@ -77,7 +77,7 @@ public class Latest extends AppCompatActivity {
             }
         });
 
-
+        // Data Driven  Programming
         postList = (ListView)findViewById(R.id.postList);
         progressDialog = new ProgressDialog(Latest.this);
         progressDialog.setMessage("Loading...");

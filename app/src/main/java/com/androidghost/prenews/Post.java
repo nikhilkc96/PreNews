@@ -40,7 +40,7 @@ public class Post extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
-
+        // Data Driven  Programming
         String url = "https://beebom.com/wp-json/wp/v2/posts/"+id+"?fields=title,content";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {

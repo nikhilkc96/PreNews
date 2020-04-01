@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Map<String,Object> mapTitle;
     int postID;
     String postTitle[];
-
+    //Funcation Programming
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         latest =(Button)findViewById(R.id.latest);
         world =(Button)findViewById(R.id.world);
         tech =(Button)findViewById(R.id.tech);
+
+        //Object Oriented Programming
 
         latest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
-
+        // Data Driven  Programming
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
@@ -121,13 +123,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //Funcation Programming
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
-
+    //Funcation Programming
     public boolean onOptionsItemSelected(MenuItem item) { switch(item.getItemId()) {
         case R.id.lougout:
             FirebaseAuth.getInstance().signOut();

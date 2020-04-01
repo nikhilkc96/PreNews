@@ -24,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView signup;
     FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
+
+    //Funcation Programming
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
+        //Funcation Programming
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(I);
             }
         });
+        //Funcation Programming
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
